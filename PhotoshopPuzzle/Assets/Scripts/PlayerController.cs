@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -83,7 +84,7 @@ public class PlayerController : MonoBehaviour
         jumpCount = maxJumpCount;
     }
 
-    private void Death()
+    public void Death()
     {
         // Play Death Anim
         if (animator != null)
@@ -98,7 +99,15 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         isGrounded = false;
 
+        StartCoroutine(DeathSequence());
+
         PlayerDied?.Invoke();
+    }
+
+    private IEnumerator DeathSequence()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void CheckGrounded()

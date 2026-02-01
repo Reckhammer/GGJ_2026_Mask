@@ -34,7 +34,11 @@ public class LevelCompleteDoor : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
+        {
             CompleteLevel();
+            if (collision.TryGetComponent(out PlayerController player))
+                player.canMove = false;
+        }
     }
 }
 
