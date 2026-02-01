@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Portal : LockableObject
 {
-    public bool startLocked = false;
     public Portal exitPortal;
     public float teleportCooldown = 1f;
 
@@ -14,14 +13,6 @@ public class Portal : LockableObject
     private void Awake()
     {
         sfx = GetComponent<AudioSource>();
-    }
-
-    private void Start()
-    {
-        if (startLocked)
-            Lock();
-        else
-            isLocked = false;
     }
 
     private void Teleport(GameObject go)
