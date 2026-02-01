@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Debug Reset"))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (Input.GetButtonDown("Debug Return"))
+            SceneManager.LoadScene("MainMenu");
+
         CheckGrounded();
         xInputDir = Input.GetAxis("Horizontal");
 
