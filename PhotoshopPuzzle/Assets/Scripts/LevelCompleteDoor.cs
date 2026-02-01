@@ -7,6 +7,13 @@ public class LevelCompleteDoor : MonoBehaviour
 {
     public Action OnLevelComplete;
 
+    private AudioSource sfx;
+
+    private void Awake()
+    {
+        sfx = GetComponent<AudioSource>();
+    }
+
     private void CompleteLevel()
     {
         StartCoroutine(LevelCompleteRoutine());
@@ -15,6 +22,9 @@ public class LevelCompleteDoor : MonoBehaviour
     private IEnumerator LevelCompleteRoutine()
     {
         Debug.Log("Level Complete. Going to next level");
+        if (sfx != null)
+            sfx.Play();
+
         OnLevelComplete?.Invoke();
         yield return new WaitForSeconds(3f);
         LevelPlayerPrefs.Instance.SetLevelPrefComplete();

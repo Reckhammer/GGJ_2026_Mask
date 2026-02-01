@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movement")]
     public bool canMove = true;
     public float moveSpeed = 10f;
     public float jumpForce = 10f;
@@ -17,16 +18,22 @@ public class PlayerController : MonoBehaviour
     private int jumpCount;
     private float xInputDir;
 
-    private Animator animator;
+    [Header("SFX")]
+    public AudioClip jumpSFX;
+    public AudioClip deathSFX;
+
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private AudioSource audioSource;
 
     public event Action PlayerDied;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponentInChildren<AudioSource>();
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -62,6 +69,8 @@ public class PlayerController : MonoBehaviour
     {
         if (animator != null)
             animator.SetTrigger("Jump");
+        if (audioSource != null)
+            audioSource.PlayOneShot(jumpSFX);
 
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         isGrounded = false;
@@ -81,6 +90,9 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("Dead", true);
         }
+
+        if (audioSource != null)
+            audioSource.PlayOneShot(deathSFX);
 
         // Disable Player Movement
         canMove = false;

@@ -9,6 +9,13 @@ public class Portal : LockableObject
 
     private bool isTeleporting = false;
 
+    private AudioSource sfx;
+
+    private void Awake()
+    {
+        sfx = GetComponent<AudioSource>();
+    }
+
     private void Start()
     {
         if (startLocked)
@@ -37,6 +44,7 @@ public class Portal : LockableObject
         exitPortal.SetTeleportCooldown();
         yield return null;
         go.transform.SetPositionAndRotation(exitPortal.transform.position, Quaternion.identity);
+        PlaySFX();
     }
 
     public void SetTeleportCooldown()
@@ -50,6 +58,12 @@ public class Portal : LockableObject
         yield return new WaitForSeconds(teleportCooldown);
         isTeleporting = false;
         Debug.Log($"{this.name} Teleport Down Finished", this);
+    }
+
+    private void PlaySFX()
+    {
+        if (sfx != null)
+            sfx.Play();
     }
 
     public override void Lock()
