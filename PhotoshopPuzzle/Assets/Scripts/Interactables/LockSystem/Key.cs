@@ -15,8 +15,11 @@ public class Key : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        unlockTarget.Unlock();
-        BecomeInactive();
+        if (collision.gameObject.tag == "Player")
+        {
+            unlockTarget.Unlock();
+            BecomeInactive();
+        }
     }
 
     private void BecomeInactive()
