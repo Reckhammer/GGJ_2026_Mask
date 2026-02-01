@@ -14,6 +14,7 @@ public class LevelCompleteDoor : MonoBehaviour
 
     private IEnumerator LevelCompleteRoutine()
     {
+        Debug.Log("Level Complete. Going to next level");
         OnLevelComplete?.Invoke();
         yield return new WaitForSeconds(3f);
         LevelPlayerPrefs.Instance.SetLevelPrefComplete();
