@@ -42,4 +42,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_01");
     }
+
+    public void OnLevelComplete()
+    {
+        LevelPlayerPrefs.Instance.SetLevelPrefComplete();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

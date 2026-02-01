@@ -40,7 +40,10 @@ public class LevelCompleteDoor : MonoBehaviour
         {
             CompleteLevel();
             if (collision.TryGetComponent(out PlayerController player))
+            {
                 player.canMove = false;
+                player.GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
+            }
         }
     }
 }

@@ -501,6 +501,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6569675911365983021, guid: 3161561521dfae04d9718b596628f4ba, type: 3}
+      propertyPath: OnLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569675911365983021, guid: 3161561521dfae04d9718b596628f4ba, type: 3}
+      propertyPath: OnLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569675911365983021, guid: 3161561521dfae04d9718b596628f4ba, type: 3}
+      propertyPath: OnLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1595384873}
+    - target: {fileID: 6569675911365983021, guid: 3161561521dfae04d9718b596628f4ba, type: 3}
+      propertyPath: OnLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569675911365983021, guid: 3161561521dfae04d9718b596628f4ba, type: 3}
+      propertyPath: OnLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569675911365983021, guid: 3161561521dfae04d9718b596628f4ba, type: 3}
+      propertyPath: OnLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569675911365983021, guid: 3161561521dfae04d9718b596628f4ba, type: 3}
+      propertyPath: OnLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569675911365983021, guid: 3161561521dfae04d9718b596628f4ba, type: 3}
+      propertyPath: OnLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1159,6 +1191,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76e38b9b8ca8e414ba7af2ab8060fb06, type: 3}
+--- !u!1 &1595384873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 342151922478382602, guid: 76e38b9b8ca8e414ba7af2ab8060fb06, type: 3}
+  m_PrefabInstance: {fileID: 1595384872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1598026551
 GameObject:
   m_ObjectHideFlags: 0
