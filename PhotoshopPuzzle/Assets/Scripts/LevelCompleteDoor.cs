@@ -30,8 +30,7 @@ public class LevelCompleteDoor : MonoBehaviour
         OnLevelComplete?.Invoke();
         OnLevelCompleteEvent?.Invoke();
         yield return new WaitForSeconds(3f);
-        LevelPlayerPrefs.Instance.SetLevelPrefComplete();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
