@@ -8,7 +8,7 @@ public class VideoSkip : MonoBehaviour
         if (Input.GetButtonDown("Debug Return"))
         {
             Debug.Log("Skipping video");
-            SceneManager.LoadScene("Level_1");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
