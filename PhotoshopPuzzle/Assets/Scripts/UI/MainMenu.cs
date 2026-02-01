@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnVideoSkipButtonClicked()
     {
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Level_1");
     }
 
     public void OnQuitClickedClicked()

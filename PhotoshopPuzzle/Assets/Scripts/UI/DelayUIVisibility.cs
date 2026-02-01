@@ -7,11 +7,11 @@ public class DelayUIVisibility : MonoBehaviour
 {
     public float initialDelay = 0.5f;
     public float fadeInTime = 3f;
-    private Image myImage;
+    private CanvasGroup myImage;
 
     public void Awake()
     {
-        myImage = GetComponent<Image>();
+        myImage = GetComponent<CanvasGroup>();
     }
 
     public void Start()
@@ -21,7 +21,7 @@ public class DelayUIVisibility : MonoBehaviour
 
     public void StartFadeInCoroutine()
     {
-        myImage.color = new Color(1f, 1f, 1f, 0f);
+        myImage.alpha = 0f;
         StartCoroutine(FadeInCoroutine());
     }
 
@@ -31,46 +31,14 @@ public class DelayUIVisibility : MonoBehaviour
 
         float currentTime = 0f;
 
-        while (myImage.color.a < 1f)
+        while (myImage.alpha< 1f)
         {
-            myImage.color = new Color(1f, 1f, 1f, Mathf.Lerp(0f, 1f, currentTime / fadeInTime));
+            myImage.alpha = Mathf.Lerp(0f, 1f, currentTime / fadeInTime);
             currentTime += Time.deltaTime;
             
             yield return null;
         }
+
+        myImage.alpha = 1f;
     }
-
-#if UNITY_EDITOR
-
-    [ContextMenu("Set UI Invisible")]
-    public void SetUIInvisible()
-    {
-        myImage = GetComponent<Image>();
-
-        if (myImage != null)
-        {
-            myImage.color = new Color(1f, 1f, 1f, 0f);
-        }
-        else
-        {
-            Debug.LogError("Image Component not found", this);
-        }
-    }
-
-    [ContextMenu("Set UI Visible")]
-    public void SetUIVisible()
-    {
-        myImage = GetComponent<Image>();
-
-        if (myImage != null)
-        {
-            myImage.color = new Color(1f, 1f, 1f, 1f);
-        }
-        else
-        {
-            Debug.LogError("Image Component not found", this);
-        }
-    }
-
-#endif
 }

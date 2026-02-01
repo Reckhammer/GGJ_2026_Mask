@@ -266,7 +266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1476809395278778811, guid: d408ba16459bd084ca429d325b577387, type: 3}
       propertyPath: sceneToLoad
-      value: Level_1
+      value: IntroVideo
       objectReference: {fileID: 0}
     - target: {fileID: 3336166592273856475, guid: d408ba16459bd084ca429d325b577387, type: 3}
       propertyPath: m_Pivot.x
