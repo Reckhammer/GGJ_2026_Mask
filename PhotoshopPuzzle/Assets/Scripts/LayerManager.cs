@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class LayerManager : MonoBehaviour
 {
-    public LayerManager Instance {  get; private set; }
+    public static LayerManager Instance {  get; private set; }
     public int CurrentLayerID { get; private set; } = 0;
     public LayerObjectPair[] layers;
+
+    public Action LayerChange;
 
     private void Awake()
     {
@@ -19,8 +21,13 @@ public class LayerManager : MonoBehaviour
 
     public void SetCurrentLayer(int layerToSet)
     {
+        // Don't do anything if already on the same layer
+        if (CurrentLayerID == layerToSet) return;
+
+        Debug.Log($"LayerManager: Setting layer ID to {layerToSet} from {CurrentLayerID}", this);
         CurrentLayerID = layerToSet;
         SetCurrentLayerToActive();
+        LayerChange?.Invoke();
     }
 
     private void SetCurrentLayerToActive()
