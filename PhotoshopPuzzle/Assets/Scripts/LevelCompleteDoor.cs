@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LevelCompleteDoor : MonoBehaviour
 {
     public Action OnLevelComplete;
+    public UnityEvent OnLevelCompleteEvent;
 
     private AudioSource sfx;
 
@@ -26,6 +28,7 @@ public class LevelCompleteDoor : MonoBehaviour
             sfx.Play();
 
         OnLevelComplete?.Invoke();
+        OnLevelCompleteEvent?.Invoke();
         yield return new WaitForSeconds(3f);
         LevelPlayerPrefs.Instance.SetLevelPrefComplete();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
