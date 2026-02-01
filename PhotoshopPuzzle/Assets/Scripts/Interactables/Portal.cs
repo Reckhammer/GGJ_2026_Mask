@@ -29,7 +29,7 @@ public class Portal : LockableObject
 
     private IEnumerator TeleportSequence(GameObject go)
     {
-        Debug.Log($"Teleporting {go.name}", this);
+        Debug.Log($"{this.name} is teleporting {go.name}", this);
         if (go.TryGetComponent(out Rigidbody2D rb))
             rb.linearVelocity = Vector2.zero;
 
