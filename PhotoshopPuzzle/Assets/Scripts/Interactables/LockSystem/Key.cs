@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public IUnlockable unlockTarget;
+    public LockableObject unlockTarget;
 
     private SpriteRenderer m_SpriteRenderer;
     private Collider2D m_Collider;
