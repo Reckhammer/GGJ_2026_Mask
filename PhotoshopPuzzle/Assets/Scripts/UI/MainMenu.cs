@@ -8,12 +8,6 @@ using UnityEditor;
 // Deprecate or repurpose into changing UI only
 public class MainMenu : MonoBehaviour
 {
-    private void Start()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
     public void OnStartButtonClicked()
     {
         SceneManager.LoadScene("IntroVideo");
@@ -35,7 +29,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnMainMenuButtonClicked()
     {
-        SceneManager.LoadScene("MainMenu_Scene");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OnCreditsButtonClicked()
