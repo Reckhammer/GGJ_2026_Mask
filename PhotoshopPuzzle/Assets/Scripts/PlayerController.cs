@@ -35,9 +35,6 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         audioSource = GetComponentInChildren<AudioSource>();
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
