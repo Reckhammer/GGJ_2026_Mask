@@ -865,10 +865,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collision_Level_2_Upper
       objectReference: {fileID: 0}
-    - target: {fileID: 8847187357867496896, guid: 3e40c224141f56d40b46fcef077451c1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

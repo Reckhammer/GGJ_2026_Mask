@@ -3255,6 +3255,7 @@ GameObject:
   - component: {fileID: 8624356531638662646}
   - component: {fileID: 4362580188469353086}
   - component: {fileID: 5516143292170469563}
+  - component: {fileID: 6410486398190677804}
   m_Layer: 0
   m_Name: Death
   m_TagString: Untagged
@@ -3409,6 +3410,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6410486398190677804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165999548987876628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78fab89ab3ad69143979e60f7b4f4ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBox
 --- !u!1 &7498771699540615388
 GameObject:
   m_ObjectHideFlags: 0
